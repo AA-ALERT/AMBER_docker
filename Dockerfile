@@ -1,16 +1,15 @@
 # Use NVIDIA Docker image
-FROM nvidia/cuda
+FROM nvidia/opencl:devel-ubuntu18.04
 
 # Install all necessary system packages
 WORKDIR /
 RUN apt-get -qq -y update && apt-get -qq -y install \
-    build-essential \
-    git \
-    cmake \
-    libgtest-dev \
-    ocl-icd-opencl-dev \
-    opencl-headers
-RUN apt-get clean
+     build-essential \
+     git \
+     cmake \
+     libgtest-dev \
+     opencl-headers \
+    && apt-get clean
 
 # Install Google Test
 WORKDIR /usr/src/gtest/build
