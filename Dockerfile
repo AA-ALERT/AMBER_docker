@@ -18,7 +18,7 @@ RUN cp *.a /usr/lib
 
 # Install AMBER
 WORKDIR /opt/amber
-RUN git clone https://github.com/AA-ALERT/AMBER_setup.git -b development
+RUN git clone https://github.com/TRASAL/AMBER_setup.git -b development
 ENV SOURCE_ROOT="/opt/amber/src"
 ENV INSTALL_ROOT="/usr/local"
 WORKDIR /opt/amber/AMBER_setup
